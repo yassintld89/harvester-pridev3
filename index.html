@@ -83,15 +83,16 @@
     }
     .brand { display: flex; align-items: center; gap: 14px; }
     .brand-logo {
-      width: 48px; height: 48px;
+      width: 54px; height: 54px;
       border-radius: 14px;
-      background: linear-gradient(140deg, #2a5a2a, #4a8a3a);
-      border: 1px solid rgba(200,168,90,.3);
       display: grid; place-items: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700; font-size: 18px;
-      color: var(--gold2);
-      box-shadow: 0 4px 20px rgba(61,122,61,.35);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .brand-logo img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(61,122,61,.4));
     }
     .brand-name {
       font-family: 'Cormorant Garamond', serif;
@@ -495,9 +496,16 @@
       gap: 36px; padding-bottom: 40px;
       border-bottom: 1px solid var(--border2);
     }
+    .footer-brand-logo {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+    }
+    .footer-brand-logo img {
+      width: 52px; height: 52px; object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(61,122,61,.4));
+    }
     .footer-brand-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; font-weight: 700; margin-bottom: 10px;
+      font-size: 22px; font-weight: 700;
     }
     .footer-brand-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
     .footer-wa {
@@ -597,7 +605,7 @@
       <div class="topbar-left">
         <span class="flag-text">🇲🇦 Morocco</span>
         <span class="topbar-sep">·</span>
-        <a href="mailto:info@harvesterpride.com">info@harvesterpride.com</a>
+        <a href="/cdn-cgi/l/email-protection#bdd4d3dbd2fdd5dccfcbd8cec9d8cfcdcfd4d9d893ded2d0"><span class="__cf_email__" data-cfemail="1f767179705f777e6d697a6c6b7a6d6f6d767b7a317c7072">[email&#160;protected]</span></a>
       </div>
       <div class="topbar-right">
         <a href="tel:+212659597350">+212 659 597 350</a>
@@ -614,7 +622,9 @@
   <header class="header">
     <div class="container header-inner">
       <a class="brand" href="#">
-        <div class="brand-logo">HP</div>
+        <div class="brand-logo">
+          <img src="images/logo.png" alt="Harvester Pride Logo">
+        </div>
         <div>
           <div class="brand-name">Harvester Pride</div>
           <div class="brand-tag">Vegetables · Fruits · Herbs Export</div>
@@ -639,7 +649,7 @@
   <section class="hero" aria-label="Hero">
     <div class="slider" id="slider">
 
-      <div class="slide active" style="--img:url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=2000&q=75');">
+      <div class="slide active" style="--img:url('images/hero-1-vegetables-market.jpg');">
         <div class="slide-overlay"></div>
         <div class="container hero-content">
           <div class="hero-eyebrow">Morocco to Europe</div>
@@ -666,7 +676,7 @@
         </div>
       </div>
 
-      <div class="slide" style="--img:url('https://images.unsplash.com/photo-1518977956815-dee0065d7b73?auto=format&fit=crop&w=2000&q=75');">
+      <div class="slide" style="--img:url('images/hero-2-beetroot.jpg');">
         <div class="slide-overlay"></div>
         <div class="container hero-content">
           <div class="hero-eyebrow">Premium Selection</div>
@@ -693,7 +703,7 @@
         </div>
       </div>
 
-      <div class="slide" style="--img:url('https://images.unsplash.com/photo-1524593119773-0f0654e20314?auto=format&fit=crop&w=2000&q=75');">
+      <div class="slide" style="--img:url('images/hero-3-farm.jpg');">
         <div class="slide-overlay"></div>
         <div class="container hero-content">
           <div class="hero-eyebrow">Trusted Partners</div>
@@ -809,7 +819,7 @@
         </div>
       </div>
       <div class="media-frame reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1506808547685-e2ba962dedb0?auto=format&fit=crop&w=1200&q=75" alt="Fresh Moroccan vegetables" loading="lazy">
+        <img src="images/about-vegetables.jpg" alt="Fresh Moroccan vegetables" loading="lazy">
         <div class="media-tag">🇲🇦 Export Ready</div>
         <div class="media-corner">MOROCCO</div>
       </div>
@@ -834,7 +844,7 @@
         <div class="product-grid">
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=70" alt="Carrots">
+              <img src="images/product-carrots.jpg" alt="Carrots">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -845,7 +855,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1518977956815-dee0065d7b73?auto=format&fit=crop&w=800&q=70" alt="Beetroot">
+              <img src="images/product-beetroot.jpg" alt="Beetroot">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -856,7 +866,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1615484477441-07c3c1a2ddc7?auto=format&fit=crop&w=800&q=70" alt="Turnips">
+              <img src="images/product-turnips.jpg" alt="Turnips">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -867,7 +877,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=70" alt="Radish">
+              <img src="images/product-radish.jpg" alt="Radish">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -878,7 +888,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=800&q=70" alt="Lettuce">
+              <img src="images/product-lettuce.jpg" alt="Lettuce">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -889,7 +899,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=70" alt="Tomatoes">
+              <img src="images/product-tomatoes.jpg" alt="Tomatoes">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -910,7 +920,7 @@
         <div class="product-grid wide">
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=800&q=70" alt="Avocado">
+              <img src="images/product-avocado.jpg" alt="Avocado">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -921,7 +931,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=800&q=70" alt="Strawberries">
+              <img src="images/product-strawberries.jpg" alt="Strawberries">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -932,7 +942,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=800&q=70" alt="Blueberries">
+              <img src="images/product-blueberries.jpg" alt="Blueberries">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -943,7 +953,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=800&q=70" alt="Raspberries">
+              <img src="images/product-raspberries.jpg" alt="Raspberries">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -964,7 +974,7 @@
         <div class="product-grid wide">
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1623660053979-b23a52acae4d?auto=format&fit=crop&w=800&q=70" alt="Coriander">
+              <img src="images/product-coriander.jpg" alt="Coriander">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -975,7 +985,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1611078222100-5c52f5b1f4a1?auto=format&fit=crop&w=800&q=70" alt="Mint">
+              <img src="images/product-mint.jpg" alt="Mint">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -986,7 +996,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=70" alt="Parsley">
+              <img src="images/product-parsley.jpg" alt="Parsley">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -997,7 +1007,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1599909533046-0b5a2b8adbb3?auto=format&fit=crop&w=800&q=70" alt="Thyme">
+              <img src="images/product-thyme.jpg" alt="Thyme">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -1008,7 +1018,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=70" alt="Basil">
+              <img src="images/product-basil.jpg" alt="Basil">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -1019,7 +1029,7 @@
           </div>
           <div class="product-card">
             <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=70" alt="Rosemary">
+              <img src="images/product-rosemary.jpg" alt="Rosemary">
               <div class="product-overlay"></div>
             </div>
             <div class="product-body">
@@ -1037,7 +1047,7 @@
   <section class="section" id="shipping">
     <div class="container grid-2 grid-2-rev">
       <div class="media-frame reveal">
-        <img src="https://images.unsplash.com/photo-1604328471151-b52226907017?auto=format&fit=crop&w=1200&q=75" alt="Logistics and shipping" loading="lazy">
+        <img src="images/shipping-truck.jpg" alt="Logistics and shipping" loading="lazy">
         <div class="media-tag">🚚 Own Fleet</div>
       </div>
       <div class="reveal reveal-delay-1">
@@ -1143,7 +1153,7 @@
             <div class="contact-icon">✉️</div>
             <div>
               <div class="contact-label">Email</div>
-              <div class="contact-val"><a href="mailto:info@harvesterpride.com">info@harvesterpride.com</a></div>
+              <div class="contact-val"><a href="/cdn-cgi/l/email-protection#137a7d757c537b726165766067766163617a77763d707c7e"><span class="__cf_email__" data-cfemail="60090e060f2008011216051314051210120904054e030f0d">[email&#160;protected]</span></a></div>
             </div>
           </div>
           <div class="contact-row">
@@ -1215,7 +1225,10 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <div class="footer-brand-name">Harvester Pride</div>
+          <div class="footer-brand-logo">
+            <img src="images/logo.png" alt="Harvester Pride Logo">
+            <div class="footer-brand-name">Harvester Pride</div>
+          </div>
           <div class="footer-brand-desc">Exporting premium fresh vegetables, fruits and aromatic herbs from Morocco to European markets. Reliable supply, own fleet, consistent quality.</div>
           <a class="footer-wa" href="https://wa.me/212659597350" target="_blank" rel="noopener">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1245,7 +1258,7 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="mailto:info@harvesterpride.com">info@harvesterpride.com</a></li>
+            <li><a href="/cdn-cgi/l/email-protection#d0b9beb6bf90b8b1a2a6b5a3a4b5a2a0a2b9b4b5feb3bfbd"><span class="__cf_email__" data-cfemail="0960676f664961687b7f6c7a7d6c7b797b606d6c276a6664">[email&#160;protected]</span></a></li>
             <li><a href="tel:+212659597350">+212 659 597 350</a></li>
             <li><a href="https://wa.me/212659597350">WhatsApp</a></li>
           </ul>
@@ -1264,7 +1277,7 @@
     WhatsApp
   </a>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Mobile menu
     const burger = document.getElementById("burger");
     const nav = document.getElementById("nav");
@@ -1318,17 +1331,4 @@ Email: ${fd.get("email") || ""}
 Products: ${fd.get("product") || ""}
 
 Message:
-${fd.get("message") || ""}`);
-      window.location.href = `mailto:info@harvesterpride.com?subject=${subject}&body=${body}`;
-    }
-    window.openMail = openMail;
-
-    // Scroll reveal
-    const revealEls = document.querySelectorAll(".reveal");
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("visible"); obs.unobserve(entry.target); } });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => obs.observe(el));
-  </script>
-</body>
-</html>
+${
