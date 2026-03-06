@@ -1,477 +1,1334 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harvester Pride | Professional Vegetables & Herbs Export from Morocco</title>
-  <meta name="description" content="Harvester Pride exports fresh vegetables and aromatic and medicinal herbs from Morocco to Europe with professional handling, own-truck logistics, and direct communication." />
-  <meta name="keywords" content="Morocco vegetables exporter, herbs supplier, fresh vegetables export, aromatic herbs, medicinal herbs, carrots, tomatoes, coriander, basil, parsley, rosemary, thyme, mint" />
-  <meta name="theme-color" content="#1c7c54" />
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg" />
-  <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Harvester Pride | Fresh Vegetables & Herbs Exporter — Morocco</title>
+  <meta name="description" content="Harvester Pride exports premium fresh vegetables, fruits and aromatic herbs from Morocco to Europe. Carrots, beetroot, tomatoes, avocado, strawberries, mint, coriander and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <style>
+    :root {
+      --bg: #080f08;
+      --bg2: #0c140c;
+      --card: #0f1a0f;
+      --text: #eef5e8;
+      --muted: #9aae8a;
+      --faint: #5c7050;
+      --gold: #c8a85a;
+      --gold2: #e8c97a;
+      --green: #3d7a3d;
+      --green2: #5db85d;
+      --border: rgba(200,168,90,.18);
+      --border2: rgba(255,255,255,.08);
+      --radius: 20px;
+      --shadow: 0 24px 60px rgba(0,0,0,.55);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ========= NOISE TEXTURE OVERLAY ========= */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 999; opacity: .5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* ======= TOP BAR ======= */
+    .topbar {
+      background: rgba(8,15,8,.9);
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+    .topbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 0; gap: 12px; flex-wrap: wrap;
+    }
+    .topbar-left, .topbar-right { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .topbar a { color: var(--muted); transition: color .2s; }
+    .topbar a:hover { color: var(--gold2); }
+    .topbar-sep { color: var(--faint); }
+    .wa-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--green2) !important; font-weight: 500;
+    }
+    .wa-icon { width: 15px; height: 15px; }
+    .flag-text { color: var(--muted); }
+
+    /* ======= HEADER ======= */
+    .header {
+      position: sticky; top: 0; z-index: 60;
+      backdrop-filter: blur(20px) saturate(1.2);
+      background: rgba(8,15,8,.72);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0; gap: 14px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand-logo {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(140deg, #2a5a2a, #4a8a3a);
+      border: 1px solid rgba(200,168,90,.3);
+      display: grid; place-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700; font-size: 18px;
+      color: var(--gold2);
+      box-shadow: 0 4px 20px rgba(61,122,61,.35);
+    }
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700; font-size: 20px;
+      letter-spacing: .02em;
+    }
+    .brand-tag { font-size: 11px; color: var(--muted); margin-top: 1px; letter-spacing: .05em; text-transform: uppercase; }
+
+    .nav { display: flex; gap: 24px; align-items: center; }
+    .nav a { color: var(--muted); font-weight: 500; font-size: 14px; letter-spacing: .02em; transition: color .2s; }
+    .nav a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 11px 20px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--green), #2d622d);
+      color: #e8f5e8; font-weight: 600; font-size: 14px;
+      border: 1px solid rgba(93,184,93,.25);
+      box-shadow: 0 6px 20px rgba(61,122,61,.4);
+      transition: transform .2s, box-shadow .2s;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(61,122,61,.5); }
+    .btn-gold {
+      background: linear-gradient(135deg, #9a7832, #c8a85a);
+      color: #1a1000;
+      border-color: rgba(200,168,90,.3);
+      box-shadow: 0 6px 20px rgba(200,168,90,.3);
+    }
+    .btn-gold:hover { box-shadow: 0 10px 28px rgba(200,168,90,.45); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border2); box-shadow: none;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.06); transform: translateY(-1px); }
+    .btn-sm { padding: 9px 16px; font-size: 13px; }
+
+    .burger {
+      display: none; width: 44px; height: 44px;
+      border-radius: 12px; border: 1px solid var(--border2);
+      background: rgba(255,255,255,.05); cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    }
+    .burger span { display: block; height: 1.5px; width: 18px; background: var(--text); }
+
+    /* ======= HERO SLIDER ======= */
+    .hero { position: relative; }
+    .slider { position: relative; min-height: 90vh; overflow: hidden; }
+    .slide {
+      position: absolute; inset: 0;
+      background-image: var(--img);
+      background-size: cover; background-position: center;
+      opacity: 0; transform: scale(1.04);
+      transition: opacity .8s ease, transform 1.4s ease;
+    }
+    .slide.active { opacity: 1; transform: scale(1); }
+    .slide-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(100deg, rgba(8,15,8,.96) 0%, rgba(8,15,8,.75) 50%, rgba(8,15,8,.25) 100%),
+        linear-gradient(180deg, rgba(8,15,8,.3) 0%, rgba(8,15,8,.7) 100%);
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 100px 0 80px;
+      max-width: 740px;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 32px; height: 1px; background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 5.5vw, 72px);
+      font-weight: 600; line-height: 1.05;
+      margin-bottom: 20px; letter-spacing: -.01em;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold2); }
+    .hero-desc {
+      color: var(--muted); font-size: clamp(15px, 1.5vw, 17px);
+      line-height: 1.65; margin-bottom: 32px; max-width: 560px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+    .hero-stats {
+      display: flex; gap: 28px; flex-wrap: wrap;
+      padding-top: 28px; border-top: 1px solid var(--border);
+    }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 700; color: var(--gold2); line-height: 1;
+    }
+    .hero-stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; letter-spacing: .04em; }
+
+    .slider-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 48px; height: 48px; border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(8,15,8,.5); backdrop-filter: blur(8px);
+      color: var(--text); font-size: 22px;
+      display: grid; place-items: center; cursor: pointer; z-index: 5;
+      transition: background .2s;
+    }
+    .slider-arrow:hover { background: rgba(255,255,255,.12); }
+    #prev { left: 20px; }
+    #next { right: 20px; }
+
+    .dots {
+      position: absolute; left: 0; right: 0; bottom: 24px;
+      display: flex; justify-content: center; gap: 8px; z-index: 6;
+    }
+    .dotbtn {
+      width: 28px; height: 3px; border-radius: 999px;
+      border: none; background: rgba(255,255,255,.2); cursor: pointer;
+      transition: background .3s, width .3s;
+    }
+    .dotbtn.active { background: var(--gold); width: 48px; }
+
+    /* ======= TRUST STRIP ======= */
+    .trust-strip {
+      background: linear-gradient(90deg, rgba(61,122,61,.12), rgba(200,168,90,.08), rgba(61,122,61,.12));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-inner {
+      display: flex; align-items: stretch;
+      padding: 0;
+    }
+    .trust-item {
+      flex: 1; display: flex; align-items: center; gap: 14px;
+      padding: 22px 24px;
+      border-right: 1px solid var(--border);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-icon {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(61,122,61,.3), rgba(200,168,90,.15));
+      border: 1px solid var(--border);
+      display: grid; place-items: center; font-size: 20px; flex-shrink: 0;
+    }
+    .trust-title { font-weight: 600; font-size: 14px; }
+    .trust-text { color: var(--muted); font-size: 13px; margin-top: 3px; }
+
+    /* ======= SECTIONS ======= */
+    .section { padding: 90px 0; }
+    .section-alt {
+      background:
+        radial-gradient(800px 400px at 80% 50%, rgba(61,122,61,.06), transparent),
+        rgba(255,255,255,.02);
+      border-top: 1px solid var(--border2);
+      border-bottom: 1px solid var(--border2);
+    }
+
+    .eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+    }
+    .eyebrow::after { content: ''; flex: 0 0 28px; height: 1px; background: var(--gold); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 600; line-height: 1.1; letter-spacing: -.01em;
+    }
+    .lead { color: var(--muted); font-size: 17px; line-height: 1.7; margin-top: 12px; }
+
+    .grid-2 {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .grid-2-rev { direction: rtl; }
+    .grid-2-rev > * { direction: ltr; }
+
+    .media-frame {
+      position: relative; border-radius: var(--radius);
+      overflow: hidden; border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .media-frame img {
+      width: 100%; height: 480px; object-fit: cover; display: block;
+    }
+    .media-tag {
+      position: absolute; bottom: 16px; left: 16px;
+      padding: 8px 14px; border-radius: 999px;
+      background: rgba(8,15,8,.75); backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      font-size: 13px; font-weight: 600; color: var(--gold2);
+    }
+    .media-corner {
+      position: absolute; top: 16px; right: 16px;
+      padding: 6px 12px; border-radius: 8px;
+      background: rgba(61,122,61,.8); backdrop-filter: blur(8px);
+      font-size: 12px; font-weight: 700;
+      color: #e8f5e8; letter-spacing: .05em;
+    }
+
+    /* ABOUT */
+    .about-text p { color: var(--muted); line-height: 1.75; margin-top: 16px; }
+    .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
+    .stat-box {
+      flex: 1; min-width: 120px;
+      padding: 16px 18px; border-radius: 16px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(61,122,61,.1), rgba(200,168,90,.05));
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 700; color: var(--gold2); line-height: 1;
+    }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 5px; letter-spacing: .04em; }
+    .about-features { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .feature-row {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 14px 16px; border-radius: 14px;
+      border: 1px solid var(--border2);
+      background: rgba(255,255,255,.03);
+    }
+    .feature-icon {
+      font-size: 20px; width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(61,122,61,.15); border-radius: 10px;
+      display: grid; place-items: center;
+    }
+    .feature-title { font-weight: 600; font-size: 14px; }
+    .feature-desc { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+    /* PRODUCTS */
+    .products-intro { max-width: 620px; margin-bottom: 50px; }
+    .product-category {
+      margin-bottom: 50px;
+    }
+    .category-label {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+    }
+    .category-label h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 600;
+    }
+    .category-line { flex: 1; height: 1px; background: var(--border); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .product-grid.wide { grid-template-columns: repeat(4, 1fr); }
+    .product-card {
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border2);
+      background: var(--card);
+      box-shadow: 0 8px 24px rgba(0,0,0,.3);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0,0,0,.45);
+      border-color: var(--border);
+    }
+    .product-img-wrap { position: relative; overflow: hidden; }
+    .product-card img {
+      width: 100%; height: 180px; object-fit: cover; display: block;
+      transition: transform .4s;
+    }
+    .product-card:hover img { transform: scale(1.06); }
+    .product-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(8,15,8,.7) 100%);
+    }
+    .product-body { padding: 14px; }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 600;
+    }
+    .product-desc { font-size: 13px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+    .product-tag {
+      display: inline-block; margin-top: 10px;
+      padding: 4px 10px; border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 11px; font-weight: 600; color: var(--gold);
+      letter-spacing: .05em;
+    }
+
+    /* SHIPPING */
+    .shipping-list { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
+    .ship-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 16px; border-radius: 14px;
+      border: 1px solid var(--border2);
+      background: rgba(255,255,255,.03);
+    }
+    .ship-num {
+      width: 32px; height: 32px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--green), #2d622d);
+      display: grid; place-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px; font-weight: 700; color: #e8f5e8;
+    }
+    .ship-title { font-weight: 600; font-size: 14px; }
+    .ship-desc { font-size: 13px; color: var(--muted); margin-top: 3px; }
+    .ship-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+
+    /* MARKETS */
+    .markets-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px; margin-top: 36px;
+    }
+    .market-card {
+      padding: 24px 20px; border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(61,122,61,.08), rgba(200,168,90,.04));
+      text-align: center;
+      transition: transform .2s, border-color .2s;
+    }
+    .market-card:hover { transform: translateY(-3px); border-color: rgba(200,168,90,.3); }
+    .market-flag { font-size: 36px; margin-bottom: 10px; }
+    .market-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; }
+    .market-desc { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    .cta-banner {
+      margin-top: 40px; padding: 36px 40px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(61,122,61,.15), rgba(200,168,90,.08));
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    }
+    .cta-banner h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 600;
+    }
+    .cta-banner p { color: var(--muted); margin-top: 6px; }
+    .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: start; }
+    .contact-info { }
+    .contact-card {
+      margin-top: 28px; border-radius: var(--radius);
+      border: 1px solid var(--border2);
+      overflow: hidden;
+    }
+    .contact-row {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border2);
+      transition: background .15s;
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row:hover { background: rgba(255,255,255,.03); }
+    .contact-icon {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      background: rgba(61,122,61,.2);
+      display: grid; place-items: center; font-size: 16px;
+    }
+    .contact-label { font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .contact-val { font-size: 15px; margin-top: 2px; }
+    .contact-val a { color: var(--text); transition: color .2s; }
+    .contact-val a:hover { color: var(--gold2); }
+
+    .form-card {
+      padding: 32px; border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(15,26,15,.8), rgba(12,20,12,.9));
+      box-shadow: var(--shadow);
+    }
+    .form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 600; margin-bottom: 6px;
+    }
+    .form-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { margin-top: 14px; }
+    .field label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+    .field input, .field textarea, .field select {
+      width: 100%; padding: 12px 16px;
+      border-radius: 12px; border: 1px solid var(--border2);
+      background: rgba(8,15,8,.6); color: var(--text);
+      font-family: 'DM Sans', sans-serif; font-size: 14px;
+      outline: none; transition: border-color .2s;
+      appearance: none;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus {
+      border-color: rgba(61,122,61,.5);
+    }
+    .field textarea { resize: vertical; min-height: 110px; }
+    .form-submit { margin-top: 20px; width: 100%; padding: 14px; font-size: 15px; border: none; }
+
+    /* FOOTER */
+    .footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 50px 0 28px;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 36px; padding-bottom: 40px;
+      border-bottom: 1px solid var(--border2);
+    }
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 700; margin-bottom: 10px;
+    }
+    .footer-brand-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .footer-wa {
+      display: inline-flex; align-items: center; gap: 7px; margin-top: 16px;
+      padding: 10px 16px; border-radius: 999px;
+      background: rgba(37,211,102,.15); border: 1px solid rgba(37,211,102,.25);
+      color: #25d366; font-size: 13px; font-weight: 600;
+      transition: background .2s;
+    }
+    .footer-wa:hover { background: rgba(37,211,102,.22); }
+    .footer-col h4 {
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col li a { color: var(--muted); font-size: 14px; transition: color .2s; }
+    .footer-col li a:hover { color: var(--text); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 24px; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-copy { font-size: 13px; color: var(--faint); }
+    .footer-flag { font-size: 13px; color: var(--muted); }
+
+    /* FAB */
+    .fab {
+      position: fixed; right: 20px; bottom: 20px; z-index: 80;
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 18px; border-radius: 999px;
+      background: linear-gradient(135deg, #128C7E, #25d366);
+      color: #fff; font-weight: 700; font-size: 14px;
+      box-shadow: 0 10px 30px rgba(37,211,102,.45);
+      border: none; cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      text-decoration: none;
+    }
+    .fab:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(37,211,102,.55); }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1020px) {
+      .grid-2 { grid-template-columns: 1fr; gap: 36px; }
+      .grid-2-rev { direction: ltr; }
+      .product-grid, .product-grid.wide { grid-template-columns: repeat(2, 1fr); }
+      .markets-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .trust-inner { flex-wrap: wrap; }
+      .trust-item { min-width: 50%; border-right: none; border-bottom: 1px solid var(--border); }
+      .trust-item:last-child { border-bottom: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .nav {
+        position: absolute; top: 70px; right: 18px;
+        flex-direction: column; padding: 16px;
+        border-radius: 18px; border: 1px solid var(--border);
+        background: rgba(8,15,8,.96); backdrop-filter: blur(16px);
+        display: none; width: min(280px, calc(100vw - 36px));
+        gap: 10px; z-index: 70;
+      }
+      .nav.open { display: flex; }
+      .burger { display: flex; }
+      .slider { min-height: 85vh; }
+      .hero-content { padding: 60px 0 50px; }
+      .hero-stats { gap: 20px; }
+      .product-grid, .product-grid.wide { grid-template-columns: 1fr 1fr; }
+      .markets-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .field-row { grid-template-columns: 1fr; }
+      .cta-banner { flex-direction: column; align-items: flex-start; }
+      .media-frame img { height: 300px; }
+      .trust-inner { flex-direction: column; }
+      .trust-item { min-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .product-grid, .product-grid.wide { grid-template-columns: 1fr; }
+      .markets-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
   <div class="topbar">
     <div class="container topbar-inner">
-      <div class="topbar-group">
-        <span>Morocco</span>
-        <span class="topbar-dot">•</span>
-        <a class="topbar-link" href="mailto:info@harvesterpride.com">info@harvesterpride.com</a>
-        <span class="topbar-dot">•</span>
-        <a class="topbar-link" href="tel:+212659597350">+212659597350</a>
+      <div class="topbar-left">
+        <span class="flag-text">🇲🇦 Morocco</span>
+        <span class="topbar-sep">·</span>
+        <a href="mailto:info@harvesterpride.com">info@harvesterpride.com</a>
       </div>
-      <div class="topbar-group">
-        <span>Fresh vegetables &amp; aromatic herbs</span>
-        <span class="topbar-dot">•</span>
-        <a class="topbar-link topbar-link--accent" href="https://wa.me/212659597350" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="topbar-right">
+        <a href="tel:+212659597350">+212 659 597 350</a>
+        <span class="topbar-sep">·</span>
+        <a class="wa-link" href="https://wa.me/212659597350" target="_blank" rel="noopener">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
       </div>
     </div>
   </div>
 
-  <header class="header" id="header">
+  <!-- HEADER -->
+  <header class="header">
     <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Harvester Pride home">
-        <img class="brand-logo" src="assets/images/logo-mark.svg" alt="Harvester Pride logo" width="50" height="50" />
-        <div class="brand-copy">
-          <span class="brand-name">Harvester Pride</span>
-          <span class="brand-tag">Vegetables &amp; Aromatic / Medicinal Herbs Exporter</span>
+      <a class="brand" href="#">
+        <div class="brand-logo">HP</div>
+        <div>
+          <div class="brand-name">Harvester Pride</div>
+          <div class="brand-tag">Vegetables · Fruits · Herbs Export</div>
         </div>
       </a>
 
-      <div class="nav-shell">
-        <nav class="nav" id="nav" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#products">Products</a>
-          <a href="#shipping">Shipping</a>
-          <a href="#markets">Markets</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a class="btn btn-sm header-cta" href="#contact">Get a Quote</a>
-        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="eyebrow">Morocco-based exporter for European markets</span>
-          <h1>Fresh vegetables and aromatic herbs delivered with professional export handling.</h1>
-          <p>
-            Harvester Pride supports European buyers with dependable sourcing, own-truck logistics,
-            and direct communication designed for long-term supply relationships.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn" href="#products">View Products</a>
-            <a class="btn btn-secondary" href="#contact">Request a Quote</a>
-          </div>
-
-          <ul class="hero-list" aria-label="Harvester Pride highlights">
-            <li>Own trucks for tighter transport control and more reliable delivery handling.</li>
-            <li>Fresh vegetables and aromatic / medicinal herbs prepared for export-oriented supply.</li>
-            <li>Serving Spain, Netherlands, the United Kingdom, and other European destinations.</li>
-          </ul>
-        </div>
-
-        <div class="hero-visual reveal">
-          <div class="visual-shell">
-            <img src="assets/images/hero-export.svg" alt="Illustration showing produce export flow from Morocco to Europe" width="1200" height="900" />
-          </div>
-          <div class="hero-floating-card">
-            <span class="tiny-label">Market focus</span>
-            <strong>Spain • Netherlands • United Kingdom</strong>
-            <p>Prepared for European buyers looking for clear communication and dependable supply.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container quick-facts">
-        <article class="fact-card reveal">
-          <div class="fact-icon" aria-hidden="true">✦</div>
-          <h3>Fresh product handling</h3>
-          <p>Selection and preparation focused on presentation, freshness, and export-ready condition.</p>
-        </article>
-        <article class="fact-card reveal">
-          <div class="fact-icon" aria-hidden="true">🚚</div>
-          <h3>Own transportation</h3>
-          <p>Private trucks help maintain better control over dispatch, timing, and delivery follow-up.</p>
-        </article>
-        <article class="fact-card reveal">
-          <div class="fact-icon" aria-hidden="true">🌍</div>
-          <h3>Europe-oriented service</h3>
-          <p>Built around the needs of importers, distributors, wholesalers, and long-term buying programs.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section--soft" id="about">
-      <div class="container split split--about">
-        <div class="section-copy reveal">
-          <span class="eyebrow">About Harvester Pride</span>
-          <h2>Built for dependable supply and professional export coordination.</h2>
-          <p class="lead">
-            Harvester Pride is a Morocco-based exporter specialized in fresh vegetables and aromatic herbs for European markets.
-          </p>
-          <p>
-            We focus on consistent quality, clear communication, and transport organization that supports timely delivery.
-            The goal is simple: help buyers work with a supplier that is responsive, practical, and easy to coordinate with.
-          </p>
-
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Direct communication</h3>
-              <p>Fast contact for quotations, availability, and shipping discussions.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Packing flexibility</h3>
-              <p>Packaging options can be discussed according to market and buyer requirements.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Partnership mindset</h3>
-              <p>Focused on regular supply relationships and dependable weekly cooperation.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="media-card reveal">
-          <img src="assets/images/about-quality.svg" alt="Illustration showing product selection, quality check, and export packing" width="1200" height="900" loading="lazy" decoding="async" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="products">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Products</span>
-          <h2>Core product range prepared for export programs.</h2>
-          <p>
-            Our offer includes vegetables and herbs selected around freshness, professional presentation,
-            and practical supply for European buyers.
-          </p>
-        </div>
-
-        <div class="group-head reveal">
-          <div>
-            <h3>Vegetables</h3>
-            <p>Fresh vegetables selected for export-focused supply.</p>
-          </div>
-        </div>
-
-        <div class="products-grid">
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-carrots.svg" alt="Carrots" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Carrots</h4>
-              <p>Fresh Moroccan carrots prepared for dependable export supply.</p>
-              <div class="product-tags"><span>Freshly selected</span><span>Export ready</span></div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-turnips.svg" alt="Turnips" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Turnips</h4>
-              <p>Clean and firm turnips prepared for European buyer requirements.</p>
-              <div class="product-tags"><span>Clean presentation</span><span>Buyer focused</span></div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-beetroot.svg" alt="Beetroot" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Beetroot</h4>
-              <p>Beetroot selected for strong color, freshness, and neat presentation.</p>
-              <div class="product-tags"><span>Strong color</span><span>Fresh handling</span></div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-tomatoes.svg" alt="Tomatoes" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Tomatoes</h4>
-              <p>Fresh tomatoes selected for balanced taste and shelf-life support.</p>
-              <div class="product-tags"><span>Fresh supply</span><span>Good presentation</span></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="group-head reveal">
-          <div>
-            <h3>Herbs</h3>
-            <p>Aromatic herbs prepared for culinary and retail-oriented markets.</p>
-          </div>
-        </div>
-
-        <div class="products-grid products-grid--herbs">
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-coriander.svg" alt="Coriander" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Coriander</h4>
-              <p>Aromatic coriander prepared for fresh-market distribution and export.</p>
-              <div class="product-tags"><span>Aromatic</span><span>Fresh harvest</span></div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-basil.svg" alt="Basil" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Basil</h4>
-              <p>Fragrant basil for culinary programs and quality-focused buyers.</p>
-              <div class="product-tags"><span>Fragrant leaves</span><span>Culinary use</span></div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-parsley.svg" alt="Parsley" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Parsley</h4>
-              <p>Fresh parsley suitable for steady supply discussions and weekly programs.</p>
-              <div class="product-tags"><span>Weekly supply</span><span>Fresh bunches</span></div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-rosemary.svg" alt="Rosemary" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Rosemary</h4>
-              <p>Strong aroma rosemary packed to support freshness during handling.</p>
-              <div class="product-tags"><span>Strong aroma</span><span>Handled carefully</span></div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-thyme.svg" alt="Thyme" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Thyme</h4>
-              <p>High-quality thyme prepared for professional European distribution.</p>
-              <div class="product-tags"><span>High quality</span><span>Professional supply</span></div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="assets/images/product-mint.svg" alt="Mint" width="960" height="720" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-body">
-              <h4>Mint</h4>
-              <p>Fresh mint handled with care to preserve appearance and aroma.</p>
-              <div class="product-tags"><span>Fresh aroma</span><span>Careful handling</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--accent" id="shipping">
-      <div class="container split">
-        <div class="section-copy reveal">
-          <span class="eyebrow">Shipping &amp; logistics</span>
-          <h2>Transport control that supports freshness, timing, and coordination.</h2>
-          <p class="lead">
-            We ship using our private trucks to help maintain freshness and improve delivery reliability.
-          </p>
-
-          <div class="process-grid">
-            <article class="step-card">
-              <span class="step-no">01</span>
-              <h3>Select &amp; prepare</h3>
-              <p>Products are prepared according to the agreed export needs and presentation level.</p>
-            </article>
-            <article class="step-card">
-              <span class="step-no">02</span>
-              <h3>Pack to requirement</h3>
-              <p>Packing options can be discussed to match the destination market and buyer preference.</p>
-            </article>
-            <article class="step-card">
-              <span class="step-no">03</span>
-              <h3>Dispatch with own trucks</h3>
-              <p>Private transportation improves control over timing, follow-up, and route handling.</p>
-            </article>
-            <article class="step-card">
-              <span class="step-no">04</span>
-              <h3>Deliver to destination</h3>
-              <p>Focused on dependable arrival for European buyers and ongoing supply schedules.</p>
-            </article>
-          </div>
-
-          <ul class="key-list">
-            <li><span class="key-label">Transportation</span><span>Own trucks</span></li>
-            <li><span class="key-label">Export markets</span><span>Europe</span></li>
-            <li><span class="key-label">Packaging</span><span>Options available upon request</span></li>
-            <li><span class="key-label">Supply</span><span>Regular and consistent</span></li>
-          </ul>
-        </div>
-
-        <div class="media-card reveal">
-          <img src="assets/images/logistics-control.svg" alt="Illustration of controlled transport and logistics planning" width="1200" height="900" loading="lazy" decoding="async" />
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="markets">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Markets</span>
-          <h2>Serving long-term clients and partners across Europe.</h2>
-          <p>
-            We focus on practical, professional cooperation with buyers looking for stable supply and responsive communication.
-          </p>
-        </div>
-
-        <div class="markets-grid">
-          <div class="market-panel reveal">
-            <h3>Current market focus</h3>
-            <div class="chip-cloud" aria-label="European market focus">
-              <span class="chip">Spain</span>
-              <span class="chip">Netherlands</span>
-              <span class="chip">United Kingdom</span>
-              <span class="chip">Other European countries</span>
-            </div>
-            <ul class="market-list">
-              <li>Suitable for importers, wholesalers, distributors, and regular buying programs.</li>
-              <li>Clear quotations and direct contact for quantities, availability, and destination details.</li>
-              <li>Focused on cooperation that values consistency, freshness, and practical logistics.</li>
-            </ul>
-          </div>
-
-          <div class="market-panel market-panel--cta reveal">
-            <span class="tiny-label">Partnership</span>
-            <h3>Looking for a dependable Morocco-based supplier?</h3>
-            <p>
-              Contact us to discuss volumes, products, destination market, and preferred delivery schedule.
-            </p>
-            <div class="panel-actions">
-              <a class="btn" href="https://wa.me/212659597350" target="_blank" rel="noopener">WhatsApp</a>
-              <a class="btn btn-secondary" href="mailto:info@harvesterpride.com">Email us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-panel reveal">
-          <span class="eyebrow">Contact</span>
-          <h2>Let’s discuss products, quantities, and destination.</h2>
-          <p class="panel-text">
-            Reach out for orders, pricing, shipping discussions, and partnership opportunities.
-          </p>
-
-          <div class="contact-list">
-            <div class="contact-row">
-              <span class="contact-label">Email</span>
-              <a href="mailto:info@harvesterpride.com">info@harvesterpride.com</a>
-            </div>
-            <div class="contact-row">
-              <span class="contact-label">Phone</span>
-              <a href="tel:+212659597350">+212659597350</a>
-            </div>
-            <div class="contact-row">
-              <span class="contact-label">WhatsApp</span>
-              <a href="https://wa.me/212659597350" target="_blank" rel="noopener">+212659597350</a>
-            </div>
-            <div class="contact-row">
-              <span class="contact-label">Address</span>
-              <span>Avenue Espagne, Residence Royal Offshore, 5th Floor No 45, Morocco</span>
-            </div>
-          </div>
-
-          <div class="note-box">
-            Share the products you need, approximate quantities, and destination market so we can reply faster.
-          </div>
-        </div>
-
-        <form class="form-card reveal" onsubmit="return openMail(event)">
-          <h3>Request a Quote</h3>
-          <p>This form opens your email app with a prepared message.</p>
-
-          <div class="form-grid">
-            <label class="field">
-              <span>Full name</span>
-              <input required name="name" placeholder="Your name" />
-            </label>
-            <label class="field">
-              <span>Company</span>
-              <input name="company" placeholder="Company name" />
-            </label>
-            <label class="field">
-              <span>Email</span>
-              <input required type="email" name="email" placeholder="name@company.com" />
-            </label>
-            <label class="field">
-              <span>Destination market</span>
-              <input name="destination" placeholder="Spain, Netherlands, UK..." />
-            </label>
-            <label class="field full">
-              <span>Message</span>
-              <textarea required name="message" rows="6" placeholder="Tell us which products you need, quantities, preferred packing, and destination."></textarea>
-            </label>
-          </div>
-
-          <div class="form-actions">
-            <button class="btn" type="submit">Send request</button>
-            <p class="form-hint">No backend required — a prepared email opens directly on your device.</p>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-branding">
-        <img src="assets/images/logo-mark.svg" alt="Harvester Pride logo" width="46" height="46" />
-        <div>
-          <div class="footer-brand-name">Harvester Pride</div>
-          <div class="footer-brand-copy">Exporting vegetables and aromatic / medicinal herbs from Morocco to Europe.</div>
-        </div>
-      </div>
-
-      <nav class="footer-links" aria-label="Footer navigation">
+      <nav class="nav" id="nav">
         <a href="#about">About</a>
         <a href="#products">Products</a>
         <a href="#shipping">Shipping</a>
         <a href="#markets">Markets</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-sm">Get a Quote</a>
       </nav>
-    </div>
 
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> Harvester Pride. All rights reserved.</span>
-      <span>Morocco • Fresh vegetables &amp; aromatic herbs export</span>
+      <button class="burger" id="burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SLIDER -->
+  <section class="hero" aria-label="Hero">
+    <div class="slider" id="slider">
+
+      <div class="slide active" style="--img:url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=2000&q=75');">
+        <div class="slide-overlay"></div>
+        <div class="container hero-content">
+          <div class="hero-eyebrow">Morocco to Europe</div>
+          <h1>Fresh Vegetables &amp;<br><em>Aromatic Herbs</em><br>for European Markets</h1>
+          <p class="hero-desc">Premium produce from Moroccan farms — carrots, beetroot, tomatoes, avocado, strawberries, mint, coriander and more. Shipped with our own refrigerated trucks.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#products">Explore Products</a>
+            <a class="btn btn-ghost" href="#contact">Request a Quote</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">🚚</div>
+              <div class="hero-stat-label">Own Fleet</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">🇪🇺</div>
+              <div class="hero-stat-label">EU Standards</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">🌿</div>
+              <div class="hero-stat-label">Farm Fresh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide" style="--img:url('https://images.unsplash.com/photo-1518977956815-dee0065d7b73?auto=format&fit=crop&w=2000&q=75');">
+        <div class="slide-overlay"></div>
+        <div class="container hero-content">
+          <div class="hero-eyebrow">Premium Selection</div>
+          <h1>Root Vegetables,<br><em>Fruits & Berries</em><br>Carefully Selected</h1>
+          <p class="hero-desc">Carrots, beetroot, turnips, radish, tomatoes, avocado, strawberries, blueberries, raspberries — consistent quality every shipment.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#products">View All Products</a>
+            <a class="btn btn-ghost" href="https://wa.me/212659597350" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">15+</div>
+              <div class="hero-stat-label">Products</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">4</div>
+              <div class="hero-stat-label">Key Markets</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">52</div>
+              <div class="hero-stat-label">Weeks Supply</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide" style="--img:url('https://images.unsplash.com/photo-1524593119773-0f0654e20314?auto=format&fit=crop&w=2000&q=75');">
+        <div class="slide-overlay"></div>
+        <div class="container hero-content">
+          <div class="hero-eyebrow">Trusted Partners</div>
+          <h1>Long-Term Supply<br><em>Partnerships</em> with<br>European Buyers</h1>
+          <p class="hero-desc">Serving importers, distributors and wholesalers in Spain, the Netherlands, the United Kingdom and across Europe with reliable year-round supply.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#markets">Our Markets</a>
+            <a class="btn btn-ghost" href="#contact">Contact Us</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">🇪🇸</div>
+              <div class="hero-stat-label">Spain</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">🇳🇱</div>
+              <div class="hero-stat-label">Netherlands</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">🇬🇧</div>
+              <div class="hero-stat-label">United Kingdom</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="slider-arrow" id="prev" aria-label="Previous">‹</button>
+      <button class="slider-arrow" id="next" aria-label="Next">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-inner">
+        <div class="trust-item reveal">
+          <div class="trust-icon">🌿</div>
+          <div>
+            <div class="trust-title">Farm-Fresh Quality</div>
+            <div class="trust-text">Directly sourced, carefully graded produce.</div>
+          </div>
+        </div>
+        <div class="trust-item reveal reveal-delay-1">
+          <div class="trust-icon">🚚</div>
+          <div>
+            <div class="trust-title">Own Refrigerated Fleet</div>
+            <div class="trust-text">Temperature-controlled from Morocco to Europe.</div>
+          </div>
+        </div>
+        <div class="trust-item reveal reveal-delay-2">
+          <div class="trust-icon">📅</div>
+          <div>
+            <div class="trust-title">Reliable Year-Round Supply</div>
+            <div class="trust-text">Consistent delivery schedules you can count on.</div>
+          </div>
+        </div>
+        <div class="trust-item reveal reveal-delay-3">
+          <div class="trust-icon">🇪🇺</div>
+          <div>
+            <div class="trust-title">EU Market Focus</div>
+            <div class="trust-text">Compliant with European import standards.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container grid-2">
+      <div class="about-text reveal">
+        <div class="eyebrow">Who We Are</div>
+        <h2>Morocco's Dedicated<br>Fresh Produce Exporter</h2>
+        <p>Harvester Pride is a Morocco-based exporter specialized in supplying premium fresh vegetables, fruits and aromatic herbs to European importers, distributors and wholesalers.</p>
+        <p>We control every step — from careful sourcing at Moroccan farms to delivery at your door — using our own refrigerated trucks to guarantee freshness and meet strict European quality standards.</p>
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">Products Available</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">European Markets</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">52</div>
+            <div class="stat-label">Weeks / Year</div>
+          </div>
+        </div>
+        <div class="about-features">
+          <div class="feature-row">
+            <div class="feature-icon">🚛</div>
+            <div>
+              <div class="feature-title">Own Transportation Fleet</div>
+              <div class="feature-desc">We ship with our private refrigerated trucks, giving us full control over delivery timing and cold chain integrity.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon">🌱</div>
+            <div>
+              <div class="feature-title">Direct Farm Sourcing</div>
+              <div class="feature-desc">We work directly with Moroccan growers to secure consistent supply and top-tier freshness at competitive prices.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon">📦</div>
+            <div>
+              <div class="feature-title">Flexible Packaging Options</div>
+              <div class="feature-desc">Custom packaging available on request to match your market requirements and branding needs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="media-frame reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1506808547685-e2ba962dedb0?auto=format&fit=crop&w=1200&q=75" alt="Fresh Moroccan vegetables" loading="lazy">
+        <div class="media-tag">🇲🇦 Export Ready</div>
+        <div class="media-corner">MOROCCO</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section section-alt" id="products">
+    <div class="container">
+      <div class="products-intro reveal">
+        <div class="eyebrow">Our Range</div>
+        <h2>Fresh Produce<br>Ready for Export</h2>
+        <p class="lead">Carefully selected and graded at source. Available year-round with flexible volumes to suit your distribution needs.</p>
+      </div>
+
+      <!-- Vegetables -->
+      <div class="product-category reveal">
+        <div class="category-label">
+          <h3>🥕 Vegetables</h3>
+          <div class="category-line"></div>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=70" alt="Carrots">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Carrots · جزر</div>
+              <div class="product-desc">Fresh Moroccan carrots, firm and sweet, sized for retail and wholesale markets.</div>
+              <span class="product-tag">Year-Round</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1518977956815-dee0065d7b73?auto=format&fit=crop&w=800&q=70" alt="Beetroot">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Beetroot · شمندر</div>
+              <div class="product-desc">Deep color, consistent sizing, packed to preserve freshness during transport.</div>
+              <span class="product-tag">Year-Round</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1615484477441-07c3c1a2ddc7?auto=format&fit=crop&w=800&q=70" alt="Turnips">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Turnips · لفت</div>
+              <div class="product-desc">Clean, firm turnips graded for European buyers and retail standards.</div>
+              <span class="product-tag">Seasonal</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=70" alt="Radish">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Radish · فجل</div>
+              <div class="product-desc">Crisp, vibrant radish, freshly harvested and ready for distribution.</div>
+              <span class="product-tag">Seasonal</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=800&q=70" alt="Lettuce">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Lettuce · سلاطة</div>
+              <div class="product-desc">Tender, crisp lettuce heads ideal for retail and food service markets.</div>
+              <span class="product-tag">Year-Round</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=70" alt="Tomatoes">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Tomatoes · طماطم</div>
+              <div class="product-desc">Premium tomatoes selected for flavor, shelf-life and visual appeal.</div>
+              <span class="product-tag">Year-Round</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fruits -->
+      <div class="product-category reveal">
+        <div class="category-label">
+          <h3>🍓 Fruits & Berries</h3>
+          <div class="category-line"></div>
+        </div>
+        <div class="product-grid wide">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=800&q=70" alt="Avocado">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Avocado · أفوكادو</div>
+              <div class="product-desc">Hass and Fuerte varieties, carefully ripened and packed for European markets.</div>
+              <span class="product-tag">Seasonal</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=800&q=70" alt="Strawberries">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Strawberries · فراولة</div>
+              <div class="product-desc">Sweet, fragrant Moroccan strawberries — one of the country's most exported fruits.</div>
+              <span class="product-tag">Jan – May</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=800&q=70" alt="Blueberries">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Blueberries · توت أزرق</div>
+              <div class="product-desc">Premium blueberries, harvested at peak ripeness and packed fresh for export.</div>
+              <span class="product-tag">Seasonal</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=800&q=70" alt="Raspberries">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Raspberries · فرامبواز</div>
+              <div class="product-desc">Delicate, flavorful raspberries handled with care to ensure arrival quality.</div>
+              <span class="product-tag">Seasonal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Herbs -->
+      <div class="product-category reveal">
+        <div class="category-label">
+          <h3>🌿 Aromatic Herbs</h3>
+          <div class="category-line"></div>
+        </div>
+        <div class="product-grid wide">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1623660053979-b23a52acae4d?auto=format&fit=crop&w=800&q=70" alt="Coriander">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Coriander · كسبرة</div>
+              <div class="product-desc">Fragrant, freshly harvested coriander — a staple in European culinary markets.</div>
+              <span class="product-tag">Year-Round</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1611078222100-5c52f5b1f4a1?auto=format&fit=crop&w=800&q=70" alt="Mint">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Mint · نعناع</div>
+              <div class="product-desc">Classic Moroccan mint, intensely aromatic, popular for tea and culinary use.</div>
+              <span class="product-tag">Year-Round</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=70" alt="Parsley">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Parsley · معدنوس</div>
+              <div class="product-desc">Bright, fresh parsley for consistent weekly supply to European wholesalers.</div>
+              <span class="product-tag">Year-Round</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1599909533046-0b5a2b8adbb3?auto=format&fit=crop&w=800&q=70" alt="Thyme">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Thyme · زعتر</div>
+              <div class="product-desc">Robust Moroccan thyme, packed to preserve its essential oils and aroma.</div>
+              <span class="product-tag">Year-Round</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=70" alt="Basil">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Basil · ازير</div>
+              <div class="product-desc">Fragrant basil suitable for retail, culinary and food manufacturing markets.</div>
+              <span class="product-tag">Seasonal</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=70" alt="Rosemary">
+              <div class="product-overlay"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-name">Rosemary · إكليل الجبل</div>
+              <div class="product-desc">Aromatic, piney rosemary sprigs, freshly cut and packed for European distribution.</div>
+              <span class="product-tag">Year-Round</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHIPPING -->
+  <section class="section" id="shipping">
+    <div class="container grid-2 grid-2-rev">
+      <div class="media-frame reveal">
+        <img src="https://images.unsplash.com/photo-1604328471151-b52226907017?auto=format&fit=crop&w=1200&q=75" alt="Logistics and shipping" loading="lazy">
+        <div class="media-tag">🚚 Own Fleet</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="eyebrow">Logistics</div>
+        <h2>Shipping &amp;<br>Cold Chain Logistics</h2>
+        <p class="lead">We control the entire supply chain — from farm to your warehouse door — using our own refrigerated trucks.</p>
+        <div class="shipping-list">
+          <div class="ship-item">
+            <div class="ship-num">1</div>
+            <div>
+              <div class="ship-title">Farm Sourcing & Grading</div>
+              <div class="ship-desc">Produce is sourced directly from Moroccan growers, graded and packed to your specifications.</div>
+            </div>
+          </div>
+          <div class="ship-item">
+            <div class="ship-num">2</div>
+            <div>
+              <div class="ship-title">Cold-Chain Loading</div>
+              <div class="ship-desc">All products are loaded in temperature-controlled conditions into our own refrigerated trucks.</div>
+            </div>
+          </div>
+          <div class="ship-item">
+            <div class="ship-num">3</div>
+            <div>
+              <div class="ship-title">Direct European Delivery</div>
+              <div class="ship-desc">Door-to-door delivery to Spain, Netherlands, UK and other EU destinations on agreed schedules.</div>
+            </div>
+          </div>
+          <div class="ship-item">
+            <div class="ship-num">4</div>
+            <div>
+              <div class="ship-title">Flexible Volumes & Packaging</div>
+              <div class="ship-desc">We accommodate varying order volumes and offer custom packaging upon request.</div>
+            </div>
+          </div>
+        </div>
+        <div class="ship-cta">
+          <a class="btn btn-gold" href="#contact">Request a Quote</a>
+          <a class="btn btn-ghost" href="https://wa.me/212659597350" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section class="section section-alt" id="markets">
+    <div class="container">
+      <div class="reveal" style="max-width:580px">
+        <div class="eyebrow">Where We Deliver</div>
+        <h2>Our European<br>Markets</h2>
+        <p class="lead">We serve importers and distributors across Europe with reliable, year-round fresh produce supply.</p>
+      </div>
+
+      <div class="markets-grid">
+        <div class="market-card reveal">
+          <div class="market-flag">🇪🇸</div>
+          <div class="market-name">Spain</div>
+          <div class="market-desc">Key destination for Moroccan fresh produce — regular weekly deliveries to major hubs.</div>
+        </div>
+        <div class="market-card reveal reveal-delay-1">
+          <div class="market-flag">🇳🇱</div>
+          <div class="market-name">Netherlands</div>
+          <div class="market-desc">Serving Dutch importers and the renowned Westland & Aalsmeer distribution networks.</div>
+        </div>
+        <div class="market-card reveal reveal-delay-2">
+          <div class="market-flag">🇬🇧</div>
+          <div class="market-name">United Kingdom</div>
+          <div class="market-desc">Supplying UK wholesalers and importers with consistent fresh produce volumes.</div>
+        </div>
+        <div class="market-card reveal reveal-delay-3">
+          <div class="market-flag">🇪🇺</div>
+          <div class="market-name">Other EU Countries</div>
+          <div class="market-desc">France, Germany, Belgium and beyond — contact us to discuss your destination.</div>
+        </div>
+      </div>
+
+      <div class="cta-banner reveal">
+        <div>
+          <h3>Looking for a reliable supplier?</h3>
+          <p>Contact us to discuss volumes, product availability, pricing and delivery schedules.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-gold" href="https://wa.me/212659597350" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Now
+          </a>
+          <a class="btn btn-ghost" href="#contact">Send Inquiry</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <div class="eyebrow">Get in Touch</div>
+        <h2>Start a<br>Conversation</h2>
+        <p class="lead">Reach out for pricing, product availability, volumes and partnership opportunities.</p>
+
+        <div class="contact-card">
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-val"><a href="mailto:info@harvesterpride.com">info@harvesterpride.com</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-val"><a href="tel:+212659597350">+212 659 597 350</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">💬</div>
+            <div>
+              <div class="contact-label">WhatsApp</div>
+              <div class="contact-val"><a href="https://wa.me/212659597350" target="_blank" rel="noopener">+212 659 597 350</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Address</div>
+              <div class="contact-val">Avenue Espagne, Residence Royal Offshore,<br>5th Floor No. 45, Morocco</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal reveal-delay-1">
+        <div class="form-title">Request a Quote</div>
+        <div class="form-sub">Tell us what you need and we'll get back to you promptly.</div>
+
+        <form onsubmit="return openMail(event)">
+          <div class="field-row">
+            <div class="field">
+              <label>Full Name</label>
+              <input name="name" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label>Company</label>
+              <input name="company" placeholder="Company name">
+            </div>
+          </div>
+          <div class="field">
+            <label>Email Address</label>
+            <input name="email" type="email" placeholder="name@company.com" required>
+          </div>
+          <div class="field">
+            <label>Products of Interest</label>
+            <select name="product">
+              <option value="">Select a category…</option>
+              <option>Vegetables (Carrots, Beetroot, Tomatoes…)</option>
+              <option>Fruits & Berries (Avocado, Strawberries…)</option>
+              <option>Aromatic Herbs (Mint, Coriander, Parsley…)</option>
+              <option>Mixed / Multiple Categories</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell us your volumes, destination and any specific requirements…" required></textarea>
+          </div>
+          <button class="btn btn-gold form-submit" type="submit">Send Inquiry →</button>
+          <p style="font-size:12px;color:var(--faint);margin-top:10px">This will open your email client with a pre-filled message.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Harvester Pride</div>
+          <div class="footer-brand-desc">Exporting premium fresh vegetables, fruits and aromatic herbs from Morocco to European markets. Reliable supply, own fleet, consistent quality.</div>
+          <a class="footer-wa" href="https://wa.me/212659597350" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#shipping">Shipping</a></li>
+            <li><a href="#markets">Markets</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#products">Carrots · Beetroot</a></li>
+            <li><a href="#products">Tomatoes · Lettuce</a></li>
+            <li><a href="#products">Avocado · Strawberries</a></li>
+            <li><a href="#products">Mint · Coriander</a></li>
+            <li><a href="#products">Parsley · Thyme</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@harvesterpride.com">info@harvesterpride.com</a></li>
+            <li><a href="tel:+212659597350">+212 659 597 350</a></li>
+            <li><a href="https://wa.me/212659597350">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© <span id="year"></span> Harvester Pride. All rights reserved.</div>
+        <div class="footer-flag">🇲🇦 Made in Morocco</div>
+      </div>
     </div>
   </footer>
 
-  <a class="fab" href="https://wa.me/212659597350" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+  <!-- FAB -->
+  <a class="fab" href="https://wa.me/212659597350" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
 
-  <script src="script.js"></script>
+  <script>
+    // Mobile menu
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("nav");
+    if (burger) burger.addEventListener("click", () => nav.classList.toggle("open"));
+    document.addEventListener("click", (e) => {
+      if (!burger.contains(e.target) && !nav.contains(e.target)) nav.classList.remove("open");
+    });
+
+    // Slider
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const dotsWrap = document.getElementById("dots");
+    let idx = 0, timer = null;
+
+    function renderDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = "";
+      slides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.className = "dotbtn" + (i === idx ? " active" : "");
+        b.addEventListener("click", () => goTo(i, true));
+        dotsWrap.appendChild(b);
+      });
+    }
+    function show(i) {
+      slides.forEach(s => s.classList.remove("active"));
+      slides[i].classList.add("active");
+      renderDots();
+    }
+    function goTo(i, user = false) {
+      idx = (i + slides.length) % slides.length;
+      show(idx);
+      if (user) { clearInterval(timer); timer = setInterval(() => goTo(idx + 1), 6000); }
+    }
+    document.getElementById("prev").addEventListener("click", () => goTo(idx - 1, true));
+    document.getElementById("next").addEventListener("click", () => goTo(idx + 1, true));
+    renderDots(); show(0);
+    timer = setInterval(() => goTo(idx + 1), 6000);
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mail form
+    function openMail(e) {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const subject = encodeURIComponent("Harvester Pride — Quote Request");
+      const body = encodeURIComponent(
+`Name: ${fd.get("name") || ""}
+Company: ${fd.get("company") || ""}
+Email: ${fd.get("email") || ""}
+Products: ${fd.get("product") || ""}
+
+Message:
+${fd.get("message") || ""}`);
+      window.location.href = `mailto:info@harvesterpride.com?subject=${subject}&body=${body}`;
+    }
+    window.openMail = openMail;
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll(".reveal");
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("visible"); obs.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
