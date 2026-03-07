@@ -1329,4 +1329,27 @@ Email: ${fd.get("email") || ""}
 Products: ${fd.get("product") || ""}
 
 Message:
-${
+${fd.get("message") || ""}`);
+      window.location.href = `mailto:info@harvesterpride.com?subject=${subject}&body=${body}`;
+    }
+    window.openMail = openMail;
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll(".reveal");
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => obs.observe(el));
+
+    // Fallback: show all reveals after 1s in case observer fails
+    setTimeout(() => {
+      document.querySelectorAll(".reveal:not(.visible)").forEach(el => el.classList.add("visible"));
+    }, 800);
+  </script>
+</body>
+</html>
